@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JASN Finance | Gestão Inteligente</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/your-code.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="blob-container">
+        <div class="blob"></div>
+        <div class="blob"></div>
+    </div>
+
+    <main class="glass-container">
+        <header>
+            <h1>JASN<span>Finance</span></h1>
+            <p id="date-display"></p>
+        </header>
+
+        <section class="balance-cards">
+            <div class="card income">
+                <h3>Entradas</h3>
+                <p id="income-display">R$ 0,00</p>
+            </div>
+            <div class="card expense">
+                <h3>Saídas</h3>
+                <p id="expense-display">R$ 0,00</p>
+            </div>
+            <div class="card total">
+                <h3>Saldo Total</h3>
+                <p id="total-display">R$ 0,00</p>
+            </div>
+        </section>
+
+<section class="transaction-form">
+    <input type="text" id="description" placeholder="Ex: Salário, Aluguel...">
+    <input type="number" id="amount" placeholder="0,00">
+    
+    <select id="type">
+        <option value="income">Entrada</option>
+        <option value="expense">Saída</option>
+    </select>
+
+    <button onclick="addTransaction()" class="btn-add">Adicionar</button>
+</section>
+<section class="chart-container" style="margin-bottom: 30px;">
+    <canvas id="financeChart"></canvas>
+</section>
+        <section class="history">
+            <ul id="transaction-list">
+                </ul>
+        </section>
+
+        <div class="actions">
+    <button onclick="exportToCSV()" class="btn-outline">Exportar CSV</button>
+</div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
